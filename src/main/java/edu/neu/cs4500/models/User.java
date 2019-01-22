@@ -7,7 +7,15 @@ public class User {
 	private String firstName;
 	private String lastName;
 
- 	public Integer getId() {
+ 	public User(int id, String username, String password, String firstName, String lastName) {
+ 		this.id = id;
+ 		this.username = username;
+ 		this.password = password;
+ 		this.firstName = firstName;
+ 		this.lastName = lastName;
+	}
+ 	
+	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
