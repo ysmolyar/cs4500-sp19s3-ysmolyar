@@ -16,16 +16,18 @@ public class UserService {
 		users.add(new User(123, "alice", "alice", "Alice", "Wonderland"));
 		users.add(new User(234, "bob", "bob", "Bob", "Marley"));
 	}
+
 	@GetMapping("/api/user")
 	public List<User> findAllUsers() {
 		return users;
 	}
+
 	@GetMapping("/api/user/{userId}")
-	public User findUserById(
-		@PathVariable("userId") Integer id) {
-		for(User user: users) {
-			if(user.getId() == id) {
+	public User findUserById(@PathVariable("userId") Integer id) {
+		for (User user : users) {
+			if (user.getId() == id) {
 				return user;
+			}
 		}
 		return null;
 	}
